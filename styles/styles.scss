@@ -1,0 +1,83 @@
+@import '../styles/footer.scss';
+@import '../styles/header.scss';
+@import '../styles/main.scss';
+@import '../styles/responsivity.scss';
+@import '../styles/variables.scss';
+@import '../styles/whatsapp-btn.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+header {
+    width: 100%;
+    background-color: $red;
+}
+
+main {
+    background-color: $black;
+}
+
+footer {
+    background-color: $red;
+}
+
+body {
+    width: 100%;
+    height: 100dvh;
+    position: relative;
+    outline: none;
+}
+
+p {
+    font-size: 1rem;
+    font-family: 'Poppins', serif;
+    color: $white;
+}
+
+h1, h2 {
+    font-size: 2.5rem;
+    font-family: 'Roboto', serif;
+    color: $green;
+}
+
+a {
+    font-size: 1rem;
+    font-family: 'Poppins', serif;
+    color: $white;
+    cursor: pointer;
+}
+
+i {
+    font-size: 1.3rem;
+    color: $white;
+    cursor: pointer;
+}
+
+button {
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: 'Poppins', serif;
+    background-color: $yellow;
+}
+
+img {
+    width: 100%;
+}
+
+svg {
+    width: 100%;
+}
+
+@media (width <= 768px) {
+    h1, h2 {
+        font-size: 1.5rem;
+    }
+}

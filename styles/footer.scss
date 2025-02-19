@@ -1,1 +1,44 @@
 @import '../styles/variables.scss';
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1240px;
+    margin: auto;
+    padding: 5dvh 0;
+    margin-top: 4dvh;
+
+    .footer-menu {
+        display: flex;
+        
+        .footer-list {
+            display: flex;
+            flex-direction: row;
+            gap: 5dvh;
+            list-style-type: none;
+
+            .footer-link {
+
+                a {
+                    transition: color .9s, border-bottom .9s;
+                    text-decoration: none;
+                }
+    
+                a:hover {
+                    color: $green;
+                    border-bottom: 1px solid $green;
+                }
+            }
+        }
+    }
+
+    .footer-icons i {
+        margin-right: 2dvh;
+        transition: color .9s;
+    }
+
+    .footer-icons i:hover {
+        color: $green;
+        animation: scale 1s infinite linear;
+    }
+}

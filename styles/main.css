@@ -1,2 +1,169 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");/*# sourceMappingURL=main.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+.about {
+  display: flex;
+  flex-direction: column;
+  padding: 10dvh 5dvh;
+}
+.about .size {
+  flex: 1;
+}
+.about h1 {
+  text-align: center;
+  font-weight: 500;
+}
+.about p {
+  line-height: 2rem;
+}
+.about img {
+  filter: brightness(40%);
+  border-radius: 1dvh;
+  transition: transform 0.9s;
+}
+.about img:hover {
+  transform: rotate(2deg);
+}
+
+.menu {
+  text-align: center;
+}
+.menu h2 {
+  text-align: center;
+  margin-bottom: 10dvh;
+}
+.menu .menu-link {
+  padding-top: 5dvh;
+  color: rgb(104, 211, 104);
+  text-decoration: none;
+  font-size: 1.4rem;
+  transition: color 0.9s;
+}
+.menu .menu-link:hover {
+  color: rgb(58, 243, 58);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  border: none;
+  gap: 2dvh;
+}
+.grid .card {
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0px -1px 17px -4px rgba(0, 0, 0, 0.45);
+  border-radius: 1dvh;
+  overflow: hidden;
+  margin-bottom: 5dvh;
+}
+.grid .card img {
+  width: 40dvh;
+  height: 40dvh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.9s;
+  filter: brightness(40%);
+}
+.grid .card img:hover {
+  transform: scale(1.1);
+}
+.grid .card .card-text {
+  padding-left: 3dvh;
+  text-align: center;
+}
+.grid .card .card-text .card-title {
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: rgb(209, 77, 77);
+  margin: 2dvh 2dvh;
+}
+.grid .card .card-text .card-title .card-description {
+  margin-top: 2dvh;
+}
+.grid .card .card-text .card-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2dvh 2dvh;
+}
+.grid .card .card-text .card-info .card-price {
+  color: rgb(209, 77, 77);
+}
+.grid .card .card-text .card-info .card-btn {
+  border: none;
+  border-radius: 1dvh;
+  width: 7dvh;
+  transition: opacity 0.9s;
+}
+.grid .card .card-text .card-info .card-btn:hover {
+  opacity: 50%;
+}
+
+.location {
+  margin-top: 10dvh;
+}
+.location .address {
+  text-align: center;
+  margin-bottom: 4dvh;
+}
+
+.contact {
+  display: flex;
+  max-width: 1240px;
+  margin: auto;
+  margin-top: 10dvh;
+}
+.contact .contact-text h3 {
+  text-align: center;
+  font-size: 2.5rem;
+}
+.contact .contact-text p {
+  line-height: 2rem;
+}
+.contact div {
+  flex: 1;
+}
+.contact .form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contact .form .name, .contact .form .email, .contact .form .message {
+  display: flex;
+}
+.contact .form .name p, .contact .form .email p, .contact .form .message p {
+  margin-top: 2dvh;
+  margin-right: 2dvh;
+  color: rgba(15, 15, 15, 0.87);
+  text-align: center;
+}
+.contact .form .name #text, .contact .form .name #email, .contact .form .name #msg, .contact .form .email #text, .contact .form .email #email, .contact .form .email #msg, .contact .form .message #text, .contact .form .message #email, .contact .form .message #msg {
+  width: 70dvh;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(15, 15, 15, 0.87);
+  color: rgba(15, 15, 15, 0.87);
+  font-family: "Poppins", serif;
+}
+.contact .form .name #text, .contact .form .name #email, .contact .form .email #text, .contact .form .email #email, .contact .form .message #text, .contact .form .message #email {
+  height: 10dvh;
+}
+.contact .form .name #msg, .contact .form .email #msg, .contact .form .message #msg {
+  height: 30dvh;
+}
+.contact .form .send-msg-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact .form .send-msg-btn .submit-btn {
+  margin-top: 3dvh;
+  color: rgb(104, 211, 104);
+  background-color: transparent;
+  border: none;
+  transition: color 0.8s;
+}
+.contact .form .send-msg-btn .submit-btn:hover {
+  color: rgb(58, 243, 58);
+}/*# sourceMappingURL=main.css.map */

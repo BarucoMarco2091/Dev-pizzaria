@@ -1,1 +1,19 @@
 @import '../styles/variables.scss';
+
+@media (width >= 768px) {
+    .about {
+        display: flex;
+        flex-direction: row;
+        max-width: 1240px;
+        margin: auto;
+    }
+}
+
+@media (width >= 768px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 1240px;
+        margin: auto;
+    }
+}

@@ -1,1 +1,201 @@
 @import '../styles/variables.scss';
+
+.about {
+    display: flex;
+    flex-direction: column;
+    padding: 10dvh 5dvh;
+
+    .size {
+        flex: 1;
+    }
+
+    h1 {
+        text-align: center;
+        font-weight: 500;
+    }
+
+    p {
+        line-height: 2rem;
+    }
+
+    img {
+        filter: brightness(40%);
+        border-radius: 1dvh;
+        transition: transform .9s;
+    }
+
+    img:hover {
+        transform: rotate(2deg);
+    }
+}
+
+.menu {
+    text-align: center;
+
+    h2 {
+        text-align: center;
+        margin-bottom: 10dvh;
+    }
+
+    .menu-link {
+        padding-top: 5dvh;
+        color: $green;
+        text-decoration: none;
+        font-size: 1.4rem;
+        transition: color .9s;
+    }
+
+    .menu-link:hover {
+        color: $secondaryGreen;
+    }
+}
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    border: none;
+    gap: 2dvh;
+
+    .card {
+        display: flex;
+        flex-direction: row;
+        box-shadow: 0px -1px 17px -4px rgba(0, 0, 0, 0.45);
+        border-radius: 1dvh;
+        overflow: hidden;
+        margin-bottom: 5dvh;
+
+        img {
+            width: 40dvh;
+            height: 40dvh;
+            object-fit: cover;
+            transition: transform .9s;
+            filter: brightness(40%);
+        }
+
+        img:hover {
+            transform: scale(1.1);
+        }
+
+        .card-text {
+            padding-left: 3dvh;
+            text-align: center;
+
+            .card-title {
+                font-weight: 500;
+                font-size: 1.2rem;
+                color: $red;
+                margin: 2dvh 2dvh;
+
+                .card-description {
+                    margin-top: 2dvh;
+                }
+            }
+
+            .card-info {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 2dvh 2dvh;
+
+                .card-price {
+                    color: $red;
+                }
+
+                .card-btn {
+                    border: none;
+                    border-radius: 1dvh;
+                    width: 7dvh;
+                    transition: opacity .9s;
+                }
+
+                .card-btn:hover {
+                    opacity: 50%;
+                }
+            }
+        }
+    }
+}
+
+.location {
+    margin-top: 10dvh;
+
+    .address {
+        text-align: center;
+        margin-bottom: 4dvh;
+    }
+}
+
+.contact {
+    display: flex;
+    max-width: 1240px;
+    margin: auto;
+    margin-top: 10dvh;
+
+    .contact-text {
+        h3 {
+            text-align: center;
+            font-size: 2.5rem;
+        }
+
+        p {
+            line-height: 2rem;
+        }
+    }
+
+    div {
+        flex: 1;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+        .name, .email, .message {
+            display: flex;
+    
+            p {
+                margin-top: 2dvh;
+                margin-right: 2dvh;
+                color: $black;
+                text-align: center;
+            }
+    
+            #text, #email, #msg {
+                width: 70dvh;
+                border: none;
+                background-color: transparent;
+                border-bottom: 1px solid $black;
+                color: $black;
+                font-family: 'Poppins', serif;
+            }
+    
+            #text, #email {
+                height: 10dvh;
+            }
+    
+            #msg {
+                height: 30dvh;
+            }
+        }
+    
+        .send-msg-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            .submit-btn {
+                margin-top: 3dvh;
+                color: $green;
+                background-color: transparent;
+                border: none;
+                transition: color .8s;
+            }
+    
+            .submit-btn:hover {
+                color: $secondaryGreen;
+            }
+        }
+    }
+}
+

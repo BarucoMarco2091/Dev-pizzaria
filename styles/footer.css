@@ -1,2 +1,35 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");/*# sourceMappingURL=footer.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1240px;
+  margin: auto;
+  padding: 5dvh 0;
+  margin-top: 4dvh;
+}
+.footer-container .footer-menu {
+  display: flex;
+}
+.footer-container .footer-menu .footer-list {
+  display: flex;
+  flex-direction: row;
+  gap: 5dvh;
+  list-style-type: none;
+}
+.footer-container .footer-menu .footer-list .footer-link a {
+  transition: color 0.9s, border-bottom 0.9s;
+  text-decoration: none;
+}
+.footer-container .footer-menu .footer-list .footer-link a:hover {
+  color: rgb(104, 211, 104);
+  border-bottom: 1px solid rgb(104, 211, 104);
+}
+.footer-container .footer-icons i {
+  margin-right: 2dvh;
+  transition: color 0.9s;
+}
+.footer-container .footer-icons i:hover {
+  color: rgb(104, 211, 104);
+  animation: scale 1s infinite linear;
+}/*# sourceMappingURL=footer.css.map */

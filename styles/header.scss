@@ -9,6 +9,15 @@
     }
 }
 
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -69,6 +78,7 @@ nav {
             border: 2px solid $black;
             border-radius: 1dvh;
             transition: border .9s;
+            animation: pulse 1s infinite linear;
         }
 
         .carousel-btn:hover {

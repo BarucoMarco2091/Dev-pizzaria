@@ -15,4 +15,12 @@
     max-width: 1240px;
     margin: auto;
   }
+}
+@media (width >= 768px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) !important;
+    max-width: 1240px;
+    margin: auto;
+  }
 }/*# sourceMappingURL=responsivity.css.map */

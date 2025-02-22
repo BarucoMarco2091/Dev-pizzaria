@@ -9,6 +9,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="styles/footer.css">
     <link rel="stylesheet" href="styles/header.css">
@@ -17,12 +18,13 @@
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/variables.css">
     <link rel="stylesheet" href="styles/whatsapp-btn.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <title>DevPizzaria</title>
 </head>
 
 <body>
     <header>
-        <nav>
+        <nav data-aos="zoom-in" data-aos-duration="1500">
             <div class="logo">
                 <a href="index.html"><i class="fa-solid fa-pizza-slice">DevPizzaria</i></a>
             </div>
@@ -50,7 +52,29 @@
                 <i class="fa-brands fa-facebook"></i>
                 <i class="fa-brands fa-instagram"></i>
             </div>
+            <button id="mobile_btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
         </nav>
+        <div id="mobile_menu">
+            <ul id="mobile_nav_list">
+                <li class="nav_item">
+                    <a href="pizzaria.html">A PIZZARIA</a>
+                </li>
+                <li class="nav_item">
+                    <a href="#menu">CARDAPIO</a>
+                </li>
+                <li class="nav_item">
+                    <a href="lunch">ALMOÇO</a>
+                </li>
+                <li class="nav_item">
+                    <a href="#location">LOCALIZAÇÃO</a>
+                </li>
+                <li class="nav_item">
+                    <a href="#contact">CONTATO</a>
+                </li>
+            </ul>
+        </div>
         <div id="carouselExampleCaptions" class="carousel slide">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
@@ -62,24 +86,24 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="assets/bg (4) (1).png" class="d-block w-100" alt="...">
+                    <img src="assets/bg (4) (1).png" class="d-block w-100" alt="pizzaria">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>A TRADIÇÃO FEITA<br>EM PEDAÇOS</h5>
-                        <button class="carousel-btn">PEÇA PELO WHATSAPP</button>
+                        <a href="tel:+5511996221043" target="_blank"><button class="carousel-btn">PEÇA PELO WHATSAPP</button></a>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/bg (4) (1).png" class="d-block w-100" alt="...">
+                    <img src="assets/bg (4) (1).png" class="d-block w-100" alt="pizzaria">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>A TRADIÇÃO FEITA<br>EM PEDAÇOS</h5>
-                        <button class="carousel-btn">PEÇA PELO WHATSAPP</button>
+                        <a href="tel:+5511996221043" target="_blank"><button class="carousel-btn">PEÇA PELO WHATSAPP</button></a>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/bg (4) (1).png" class="d-block w-100" alt="...">
+                    <img src="assets/bg (4) (1).png" class="d-block w-100" alt="pizzaria">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>A TRADIÇÃO FEITA<br>EM PEDAÇOS</h5>
-                        <button class="carousel-btn">PEÇA PELO WHATSAPP</button>
+                        <a href="tel:+5511996221043" target="_blank"><button class="carousel-btn">PEÇA PELO WHATSAPP</button></a>
                     </div>
                 </div>
             </div>
@@ -98,147 +122,147 @@
     <main>
         <section class="menu">
             <h2>Conheça nosso cardápio</h2>
-            <div class="grid" id="menu">
+            <div class="grid" id="menu" data-aos="fade-up-left" data-aos-duration="3000">
                 <div class="card">
-                    <img src="assets/pizza4queijos.png" alt="">
+                    <img src="assets/pizza4queijos.png" alt="Pizza Quatro Queijos">
                     <div class="card-text">
                         <span class="card-title">Pizza Quatro Queijos</span>
                         <p class="card-description">Massa fininha, molho de tomate natural, calabresa, mozzarella,
                             cebola
-                            em rodelas, ovos cozidos, tomate em rodelas e azeitonas.</p>
+                            em rodelas, ovos cozidos, tomate em rodelas, azeitonas e azeite.</p>
                         <div class="card-info">
                             <p class="card-price">R$ 85.00</p>
-                            <button class="add-to-cart-btn" data-name="pizza quatro queijos" data-price="85.00"><i class="fa-solid fa-cart-shopping"></i></button>
+                            <button class="add-to-cart-btn" data-name="Pizza Quatro Queijos" data-price="85.00"><i class="fa-solid fa-cart-shopping"></i></button>
                         </div>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="assets/pizzabrasileira.png" alt="">
+                    <img src="assets/pizzabrasileira.png" alt="Pizza Brasileira=">
                     <div class="card-text">
                         <span class="card-title">Pizza Brasileira</span>
                         <p class="card-description">Massa fininha, molho de tomate natural, calabresa, mozzarella,
                             cebola
-                            em rodelas, ovos cozidos, tomate em rodelas e azeitonas.</p>
+                            em rodelas, ovos cozidos, tomate em rodelas, azeitonas e azeite.</p>
                         <div class="card-info">
                             <p class="card-price">R$ 95.00</p>
-                            <button class="add-to-cart-btn" data-name="pizza brasileira" data-price="95.00"><i class="fa-solid fa-cart-shopping"></i></button>
+                            <button class="add-to-cart-btn" data-name="Pizza Brasileira" data-price="95.00"><i class="fa-solid fa-cart-shopping"></i></button>
                         </div>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="assets/pizzacalabresa.png" alt="">
+                    <img src="assets/pizzacalabresa.png" alt="Pizza Calabresa">
                     <div class="card-text">
                         <span class="card-title">Pizza Calabresa</span>
                         <p class="card-description">Massa fininha, molho de tomate natural, calabresa, mozzarella,
                             cebola
-                            em rodelas, ovos cozidos, tomate em rodelas e azeitonas.</p>
+                            em rodelas, ovos cozidos, tomate em rodelas, azeitonas e azeite.</p>
                         <div class="card-info">
                             <p class="card-price">R$ 100.00</p>
-                            <button class="add-to-cart-btn" data-name="pizza calabresa" data-price="100.00"><i class="fa-solid fa-cart-shopping"></i></button>
+                            <button class="add-to-cart-btn" data-name="Pizza Calabresa" data-price="100.00"><i class="fa-solid fa-cart-shopping"></i></button>
                         </div>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="assets/pizzacamarao.png" alt="">
+                    <img src="assets/pizzacamarao.png" alt="Pizza de Camarão">
                     <div class="card-text">
                         <span class="card-title">Pizza de Camarão</span>
                         <p class="card-description">Massa fininha, molho de tomate natural, calabresa, mozzarella,
                             cebola
-                            em rodelas, ovos cozidos, tomate em rodelas e azeitonas.</p>
+                            em rodelas, ovos cozidos, tomate em rodelas, azeitonas e azeite.</p>
                         <div class="card-info">
                             <p class="card-price">R$ 105.00</p>
-                            <button class="add-to-cart-btn" data-name="pizza camarao" data-price="105.00"><i class="fa-solid fa-cart-shopping"></i></button>
+                            <button class="add-to-cart-btn" data-name="Pizza Camarao" data-price="105.00"><i class="fa-solid fa-cart-shopping"></i></button>
                         </div>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="assets/pizzacatupiry.png" alt="">
+                    <img src="assets/pizzacatupiry.png" alt="Pizza Catupiry">
                     <div class="card-text">
                         <span class="card-title">Pizza Catupiry</span>
                         <p class="card-description">Massa fininha, molho de tomate natural, calabresa, mozzarella,
                             cebola
-                            em rodelas, ovos cozidos, tomate em rodelas e azeitonas.</p>
+                            em rodelas, ovos cozidos, tomate em rodelas, azeitonas e azeite.</p>
                         <div class="card-info">
                             <p class="card-price">R$ 90.00</p>
-                            <button class="add-to-cart-btn" data-name="pizza catupiry" data-price="90.00"><i class="fa-solid fa-cart-shopping"></i></button>
+                            <button class="add-to-cart-btn" data-name="Pizza Catupiry" data-price="90.00"><i class="fa-solid fa-cart-shopping"></i></button>
                         </div>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="assets/pizzaescarola.png" alt="">
+                    <img src="assets/pizzaescarola.png" alt="Pizza Escarola">
                     <div class="card-text">
                         <span class="card-title">Pizza Escarola</span>
                         <p class="card-description">Massa fininha, molho de tomate natural, calabresa, mozzarella,
                             cebola
-                            em rodelas, ovos cozidos, tomate em rodelas e azeitonas.</p>
+                            em rodelas, ovos cozidos, tomate em rodelas, azeitonas e azeite.</p>
                         <div class="card-info">
                             <p class="card-price">R$ 95.00</p>
-                            <button class="add-to-cart-btn" data-name="pizza escarola" data-price="95.00"><i class="fa-solid fa-cart-shopping"></i></button>
+                            <button class="add-to-cart-btn" data-name="Pizza Escarola" data-price="95.00"><i class="fa-solid fa-cart-shopping"></i></button>
                         </div>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="assets/pizzafrangocatupiry.png" alt="">
+                    <img src="assets/pizzafrangocatupiry.png" alt="Pizza Frango com Catupiry">
                     <div class="card-text">
                         <span class="card-title">Pizza Frango com Catupiry</span>
                         <p class="card-description">Massa fininha, molho de tomate natural, calabresa, mozzarella,
                             cebola
-                            em rodelas, ovos cozidos, tomate em rodelas e azeitonas.</p>
+                            em rodelas, ovos cozidos, tomate em rodelas, azeitonas e azeite.</p>
                         <div class="card-info">
                             <p class="card-price">R$ 85.00</p>
-                            <button class="add-to-cart-btn" data-name="pizza frango com catupiry"  data-price="85.00"><i class="fa-solid fa-cart-shopping"></i></button>
+                            <button class="add-to-cart-btn" data-name="Pizza Frango com Catupiry"  data-price="85.00"><i class="fa-solid fa-cart-shopping"></i></button>
                         </div>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="assets/pizzamargheritta.png" alt="">
+                    <img src="assets/pizzamargheritta.png" alt="Pizza Margheritta">
                     <div class="card-text">
                         <span class="card-title">Pizza Margheritta</span>
                         <p class="card-description">Massa fininha, molho de tomate natural, calabresa, mozzarella,
                             cebola
-                            em rodelas, ovos cozidos, tomate em rodelas e azeitonas.</p>
+                            em rodelas, ovos cozidos, tomate em rodelas, azeitonas e azeite.</p>
                         <div class="card-info">
                             <p class="card-price">R$ 110.00</p>
-                            <button class="add-to-cart-btn" data-name="pizza margheritta" data-price="110.00"><i class="fa-solid fa-cart-shopping"></i></button>
+                            <button class="add-to-cart-btn" data-name="Pizza Margheritta" data-price="110.00"><i class="fa-solid fa-cart-shopping"></i></button>
                         </div>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="assets/pizzamozarella.png" alt="">
+                    <img src="assets/pizzamozarella.png" alt="Pizza Mozzarella">
                     <div class="card-text">
                         <span class="card-title">Pizza Mozzarella</span>
                         <p class="card-description">Massa fininha, molho de tomate natural, calabresa, mozzarella,
                             cebola
-                            em rodelas, ovos cozidos, tomate em rodelas e azeitonas.</p>
+                            em rodelas, ovos cozidos, tomate em rodelas, azeitonas e azeite.</p>
                         <div class="card-info">
                             <p class="card-price">R$ 100.00</p>
-                            <button class="add-to-cart-btn" data-name="pizza mozzarella" data-price="100.00"><i class="fa-solid fa-cart-shopping"></i></button>
+                            <button class="add-to-cart-btn" data-name="Pizza Mozzarella" data-price="100.00"><i class="fa-solid fa-cart-shopping"></i></button>
                         </div>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="assets/pizzapeperonni.png" alt="">
+                    <img src="assets/pizzapeperonni.png" alt="Pizza Pepperonni">
                     <div class="card-text">
                         <span class="card-title">Pizza Pepperonni</span>
                         <p class="card-description">Massa fininha, molho de tomate natural, calabresa, mozzarella,
                             cebola
-                            em rodelas, ovos cozidos, tomate em rodelas e azeitonas.</p>
+                            em rodelas, ovos cozidos, tomate em rodelas, azeitonas e azeite.</p>
                         <div class="card-info">
                             <p class="card-price">R$ 100.00</p>
-                            <button class="add-to-cart-btn" data-name="pizza pepperonni" data-price="100.00"><i class="fa-solid fa-cart-shopping"></i></button>
+                            <button class="add-to-cart-btn" data-name="Pizza Pepperonni" data-price="100.00"><i class="fa-solid fa-cart-shopping"></i></button>
                         </div>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="assets/pizzaportuguesa.png" alt="">
+                    <img src="assets/pizzaportuguesa.png" alt="Pizza Portuguesa">
                     <div class="card-text">
                         <span class="card-title">Pizza Portuguesa</span>
                         <p class="card-description">Massa fininha, molho de tomate natural, calabresa, mozzarella,
                             cebola
-                            em rodelas, ovos cozidos, tomate em rodelas e azeitonas.</p>
+                            em rodelas, ovos cozidos, tomate em rodelas, azeitonas e azeite.</p>
                         <div class="card-info">
                             <p class="card-price">R$ 105.00</p>
-                            <button class="add-to-cart-btn"  data-name="pizza portuguesa" data-price="105.00"><i class="fa-solid fa-cart-shopping"></i></button>
+                            <button class="add-to-cart-btn"  data-name="Pizza Portuguesa" data-price="105.00"><i class="fa-solid fa-cart-shopping"></i></button>
                         </div>
                     </div>
                 </div>
@@ -269,7 +293,7 @@
     <footer>
         <div class="footer-container">
             <div class="footer-logo">
-                <i class="fa-solid fa-pizza-slice">DevPizzaria</i>
+                <a href="index.html"><i class="fa-solid fa-pizza-slice">DevPizzaria</i></a>
             </div>
             <div class="footer-menu">
                 <ul class="footer-list">
@@ -297,6 +321,10 @@
             </div>
         </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
     <script src="script/script.js"></script>
 </body>
 

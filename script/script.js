@@ -1,3 +1,12 @@
+AOS.init()
+
+$(document).ready(function () {
+    $('#mobile_btn').on('click', function() {
+        $('#mobile_menu').toggleClass('active');
+        $('#mobile_btn').find('i').toggleClass('fa-bars fa-x');
+    });
+});
+
 const menu = document.getElementById("menu");
 const cartModal = document.getElementById("cart-modal");
 const cartItemsContainer = document.getElementById("cart-items");
@@ -11,22 +20,22 @@ const cartCounter = document.getElementById("cart-count");
 
 let cart = [];
 
-cartBtn.addEventListener("click", function () {
+cartBtn.addEventListener("click", function() {
     cartModal.style.display = "flex";
 });
 
-closeModalBtn.addEventListener("click", function () {
+closeModalBtn.addEventListener("click", function() {
     cartModal.style.display = "none";
 });
 
-cartModal.addEventListener("click", function (event) {
+cartModal.addEventListener("click", function(event) {
     if (event.target === cartModal) {
         cartModal.style.display = "none";
     };
 });
 
 // Adicionar produtos no carrinho
-menu.addEventListener("click", function (event) {
+menu.addEventListener("click", function(event) {
     let parentButton = event.target.closest(".add-to-cart-btn");
 
     if (parentButton) {
@@ -93,7 +102,7 @@ function updateCartModal() {
 };
 
 // Função para remover item do carrinho
-cartItemsContainer.addEventListener("click", function (event) {
+cartItemsContainer.addEventListener("click", function(event) {
     if (event.target.classList.contains("remove-from-cart-btn")) {
         const name = event.target.getAttribute("data-name");
         removeItemCart(name);
@@ -116,16 +125,16 @@ function removeItemCart(name) {
 
 // pegar o endereço
 
-addressInput.addEventListener('input', function (event) {
+addressInput.addEventListener('input', function(event) {
     let inputValue = event.target.value;
     if (inputValue !== "") {
-        addressWarn.style.display = "none"
+        addressWarn.style.display = "none";
     };
 });
 
 // finalizar pedido 
 
-checkoutBtn.addEventListener("click", function () {
+checkoutBtn.addEventListener("click", function() {
     if (cart.length === 0) return;
     if (addressInput.value === "") {
         addressWarn.style.display = "block";

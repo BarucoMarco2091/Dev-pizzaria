@@ -1,6 +1,31 @@
 @import '../styles/variables.scss';
 
-@media (width >= 768px) {
+@media screen and (max-width: 600px) {
+    nav {
+        display: flex !important;
+        padding: 1dvh 1dvh !important;
+    }
+}
+
+@media screen and (max-width: 1170px) {
+    .nav-list {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #mobile_btn {
+        display: block !important;
+    }
+}
+
+@media (width <=768px) {
+    .carousel-caption {
+        display: none;
+    }
+}
+
+@media (width >=768px) {
     .about {
         display: flex;
         flex-direction: row;
@@ -9,20 +34,68 @@
     }
 }
 
-@media (width >= 768px) {
+@media (width >=768px) {
     .grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         max-width: 1240px;
         margin: auto;
+
+        .card {
+            display: flex;
+            flex-direction: row !important;
+
+            img {
+                width: 40dvh;
+                height: 40dvh;
+                object-fit: cover;
+            }
+        }
     }
 }
 
-@media (width >= 768px) {
+@media (width <=768px) {
+    .contact {
+        display: flex;
+        flex-direction: column;
+        margin: 1dvh 1dvh;
+
+        #text,
+        #email,
+        #msg {
+            width: 90% !important;
+        }
+    }
+}
+
+@media (width >=768px) {
     .grid-container {
         display: grid;
         grid-template-columns: repeat(3, 1fr) !important;
         max-width: 1240px;
         margin: auto;
+    }
+}
+
+@media (width >=768px) {
+    #cart-items {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 1dvh 1dvh;
+    }
+}
+
+@media (width <=1170px) {
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .footer-list {
+            display: flex;
+            flex-direction: column !important;
+        }
     }
 }

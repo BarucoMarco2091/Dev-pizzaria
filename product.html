@@ -25,22 +25,79 @@
 
 <body>
     <!-- (Estrutura similar ao dashboard, com tabela) -->
-<table id="productsTable">
-    <thead>
-      <tr>
-        <th>Nome</th>
-        <th>Preço</th>
-        <th>Ações</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
-  <button id="addProduct">Adicionar Produto</button>
+    <!-- admin/product.html -->
+    <table id="productsTable">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Preço</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <button id="addProduct">Adicionar Produto</button>
+
+    <script type="module">
+        import { getProducts, deleteProduct, addProduct, uploadImage } from '../js/products.js';
+        import { auth } from '../js/firebase-config.js';
+        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+        onAuthStateChanged(auth, (user) => {
+            if (!user) {
+                window.location.href = 'login.html';
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            const products = await getProducts();
+            renderProducts(products);
+
+            document.getElementById('addProduct').addEventListener('click', async () => {
+                const name = prompt('Nome do produto:');
+                const price = parseFloat(prompt('Preço:'));
+                const description = prompt('Descrição:');
+                const imageFile = prompt('URL da imagem (ou cole o caminho temporário):');
+
+                if (name && price) {
+                    await addProduct({ name, price, description, image: imageFile });
+                    const updatedProducts = await getProducts();
+                    renderProducts(updatedProducts);
+                }
+            });
+        });
+
+        function renderProducts(products) {
+            const tbody = document.querySelector('#productsTable tbody');
+            tbody.innerHTML = products.map(product => `
+        <tr>
+          <td>${product.name}</td>
+          <td>R$ ${product.price.toFixed(2)}</td>
+          <td>
+            <button class="delete" data-id="${product.id}">Excluir</button>
+          </td>
+        </tr>
+      `).join('');
+
+            // Adicione event listeners para deletar
+            document.querySelectorAll('.delete').forEach(btn => {
+                btn.addEventListener('click', async (e) => {
+                    const id = e.target.dataset.id;
+                    await deleteProduct(id);
+                    const updatedProducts = await getProducts();
+                    renderProducts(updatedProducts);
+                });
+            });
+        }
+    </script>
+    <button id="addProduct">Adicionar Produto</button>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script src="script/auth.js"></script>
+    <script src="script/cardapio.js"></script>
     <script src="script/product.js"></script>
     <script src="script/script.js"></script>
 </body>

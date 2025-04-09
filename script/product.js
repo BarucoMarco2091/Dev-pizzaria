@@ -1,42 +1,48 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const products = JSON.parse(localStorage.getItem('products')) || [];
-    const tableBody = document.querySelector('#productsTable tbody');
-  
-    // Renderiza produtos
-    function renderProducts() {
-      tableBody.innerHTML = products.map(product => `
-        <tr>
-          <td>${product.name}</td>
-          <td>R$ ${product.price.toFixed(2)}</td>
-          <td>
-            <button class="edit" data-id="${product.id}">Editar</button>
-            <button class="delete" data-id="${product.id}">Excluir</button>
-          </td>
-        </tr>
-      `).join('');
+// products.js
+import {
+    getFirestore,
+    collection,
+    addDoc,
+    getDocs,
+    deleteDoc,
+    doc
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+const db = getFirestore();
+
+// Adicionar produto
+export const addProduct = async (productData) => {
+    try {
+        const docRef = await addDoc(collection(db, "products"), productData);
+        return docRef.id;
+    } catch (e) {
+        console.error("Erro ao adicionar: ", e);
     }
-  
-    // Adiciona listeners
-    document.getElementById('addProduct').addEventListener('click', () => {
-      const name = prompt('Nome do produto:');
-      const price = parseFloat(prompt('Preço:'));
-      if (name && price) {
-        products.push({ id: Date.now(), name, price });
-        localStorage.setItem('products', JSON.stringify(products));
-        renderProducts();
-      }
-    });
-  
-    // Delegation para editar/excluir
-    tableBody.addEventListener('click', (e) => {
-      if (e.target.classList.contains('delete')) {
-        const id = parseInt(e.target.dataset.id);
-        const index = products.findIndex(p => p.id === id);
-        products.splice(index, 1);
-        localStorage.setItem('products', JSON.stringify(products));
-        renderProducts();
-      }
-    });
-  
-    renderProducts();
-  });
+};
+
+// Listar todos os produtos
+export const getProducts = async () => {
+    const querySnapshot = await getDocs(collection(db, "products"));
+    return querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+};
+
+// Deletar produto
+export const deleteProduct = async (id) => {
+    await deleteDoc(doc(db, "products", id));
+};
+
+// products.js (adicione isto)
+import {
+    getStorage,
+    ref,
+    uploadBytes,
+    getDownloadURL
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
+
+const storage = getStorage();
+
+export const uploadImage = async (file) => {
+    const storageRef = ref(storage, `products/${file.name}`);
+    await uploadBytes(storageRef, file);
+    return await getDownloadURL(storageRef);
+};
